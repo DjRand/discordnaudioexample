@@ -43,9 +43,12 @@ namespace DiscordAudioExample
             _client = new DiscordClient();
 
             // We're using Discord.Commands, got to tell it what you want to use.
+            // the '!' in the line below, is the 'command prefix'
+            // example: !play, !skip.
+            // If you change '!' to '$' you would use $play
             _client.UsingCommands(x =>
             {
-                x.PrefixChar = '$';
+                x.PrefixChar = '!';
                 x.HelpMode = HelpMode.Public;
             });
 
@@ -74,6 +77,8 @@ namespace DiscordAudioExample
                     if (voiceChan == null)
                     {
                         // If they aren't, call them out on their stupidity.
+                        // Note:  Some times discord bugs, and the bot won't see  you in a voice channel.
+                        // If this happens, disconnect and reconnect to voice while the bot is online.
                         await e.Channel.SendMessage("You want me to play a song for you, but you're not even connected to voice? Pfftt.");
                         return;
                     }
