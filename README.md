@@ -6,7 +6,7 @@ An example bot using Discord NAudio
 Note: You can just use the Program.cs code in your own bot,  but YOU DO NEED libsodium.dll AND opus.dll.
 
 #If you're having any issues compiling this:
-I made this on Visual Studio 2015 (Community) (Update 3).
+I made this on Visual Studio 2015 (Community) (Update 3).  
 .NET Framework 4.5.2
 
 
