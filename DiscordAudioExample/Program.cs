@@ -69,9 +69,6 @@ namespace DiscordAudioExample
                     // Check to see if a song is already playing.  If it is, return;
                     if (playingSong == true) return;
 
-                    // Song isn't playing.  Set the "PlayingSong" to true.
-                    playingSong = true;
-
                     // Check to see if the person who used the !play command is on a voice channel:
                     Channel voiceChan = e.User.VoiceChannel;
                     if (voiceChan == null)
@@ -85,6 +82,9 @@ namespace DiscordAudioExample
                     // Okay, they're on a voice channel.
 
                     await e.Channel.SendMessage("Playing file...");
+
+                    // Set the "PlayingSong" to true.
+                    playingSong = true;
 
                     // You'll need to change the file location, of course.
                     await SendAudio(@"F:\Stuff\Music\somefile.mp3", voiceChan);
