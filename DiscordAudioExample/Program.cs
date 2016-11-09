@@ -118,7 +118,7 @@ namespace DiscordAudioExample
                 {
                     try
                     {
-                        await _client.Connect(botToken);
+                        await _client.Connect(botToken, TokenType.Bot);
                         break;
                     }
                     catch
